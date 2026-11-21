@@ -1,0 +1,27 @@
+# Roadmap
+
+- [x] Adapt app to the new database (pdvmaster)
+  - [x] Sales / stock / finance records carry the store
+  - [x] Add-ons use the database's add-on groups (PDV, catalog, open orders, history)
+  - [x] Remove fields that no longer exist (cash received/change)
+  - [x] New image uploads use long-lived signed links (public buckets are blocked)
+  - [x] User management functions deployed and new users linked to the store
+- [ ] Finalização integração Pedla (doc "PRÓXIMA ETAPA")
+  - [x] Auditoria da área /master e da proteção contra reset (análise de código)
+  - [x] Testar conexão / Reconectar chamam a validação real do Master
+  - [x] Tela Minha Assinatura lendo a assinatura do Master
+  - [x] Proteção extra das tabelas Master e funções internas no banco
+  - [x] Teste dos bloqueios no banco (feito em teste desfeito, sem alterar dados)
+  - [x] Heartbeat, comandos, ACK, resultado e relatórios implementados + sincronização automática por minuto
+  - [x] Tempo da sincronização e limpeza automática configuráveis em /master
+  - [ ] Teste real com o Master (comando license.activate) — o token salvo já volta a ser lido; falta enviar um comando pelo Master
+  - [x] Cobranças, checkout e histórico de pagamentos lendo /charges e /payments do Master
+  - [x] Botão Pagar abre o checkout real do Mercado Pago (página em branco corrigida)
+  - [x] Minha Assinatura: cobrança paga sem botão de pagamento, último pagamento do Master, atualização automática após o checkout
+- [ ] Bloqueio e reativação automática por licença (doc "IMPLEMENTAR BLOQUEIO E REATIVAÇÃO")
+  - [x] Banco: estado da licença visível ao app + bloqueio de gravações quando suspensa (HTTP 403)
+  - [x] Sincronização reconhece suspensão/reativação também pelo heartbeat
+  - [x] Funções de usuários e redefinição recusam com 403 quando suspensa
+  - [x] Tela "Estabelecimento temporariamente suspenso" só com Minha Assinatura, liberando sozinha na reativação
+  - [x] Testes automáticos da regra da licença e relatório final
+  - [ ] Teste real: suspender e reativar pelo Painel Master (aguarda o envio do comando pelo Master)
