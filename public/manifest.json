@@ -1,0 +1,17 @@
+{
+  "name": "RestaurPOS - Sistema PDV",
+  "short_name": "RestaurPOS",
+  "description": "Sistema completo de ponto de venda para restaurantes",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}
