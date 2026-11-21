@@ -1,16 +1,15 @@
-
 name: Deploy Edge Functions - PDV Salão Universal
 
 on:
   workflow_dispatch:
     inputs:
       project_ref:
-        description: "jatkprtpnlejklciiqih"
+        description: "Project Ref do Supabase da loja de destino"
         required: true
         type: string
 
       confirm_project_ref:
-        description: "jatkprtpnlejklciiqih"
+        description: "Digite novamente o Project Ref para confirmar"
         required: true
         type: string
 
