@@ -1,0 +1,13 @@
+project_id = "lxtpehaqwclauujiszaj"
+
+[functions.master-auth]
+verify_jwt = false
+
+[functions.master-admin]
+verify_jwt = false
+
+[functions.pdv-subscription]
+verify_jwt = false
+
+[functions.master-sync]
+verify_jwt = false

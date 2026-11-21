@@ -1,0 +1,1 @@
+ALTER TABLE public.store_settings ADD COLUMN IF NOT EXISTS printer_margin_left integer NOT NULL DEFAULT 0;

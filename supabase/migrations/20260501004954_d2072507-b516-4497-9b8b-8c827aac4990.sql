@@ -1,0 +1,1 @@
+ALTER TABLE public.store_settings ADD COLUMN IF NOT EXISTS subtitle_text text DEFAULT 'Sistema de Vendas';

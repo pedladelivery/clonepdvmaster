@@ -1,0 +1,3 @@
+ALTER TABLE public.store_settings ADD COLUMN IF NOT EXISTS category_columns integer NOT NULL DEFAULT 2, ADD COLUMN IF NOT EXISTS product_columns integer NOT NULL DEFAULT 2;
+CREATE OR REPLACE FUNCTION public.validate_catalog_columns() RETURNS trigger LANGUAGE plpgsql SET search_path = public AS $$ BEGIN IF NEW.category_columns NOT IN (2,3,4) OR NEW.product_columns NOT IN (2,3,4) THEN RAISE EXCEPTION 'Escolha 2, 3 ou 4 colunas para categorias e produtos'; END IF; RETURN NEW; END; $$;
+CREATE TRIGGER validate_catalog_columns BEFORE INSERT OR UPDATE ON public.store_settings FOR EACH ROW EXECUTE FUNCTION public.validate_catalog_columns();
